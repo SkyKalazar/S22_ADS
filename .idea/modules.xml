@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BalancedBinarySearchTree/BalancedBinarySearchTree.iml" filepath="$PROJECT_DIR$/BalancedBinarySearchTree/BalancedBinarySearchTree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Fibonacci/Fibonacci.iml" filepath="$PROJECT_DIR$/Fibonacci/Fibonacci.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MessyBoogeymanTree/MessyBoogeymanTree.iml" filepath="$PROJECT_DIR$/MessyBoogeymanTree/MessyBoogeymanTree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PostfixCalculator/PostfixCalculator.iml" filepath="$PROJECT_DIR$/PostfixCalculator/PostfixCalculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/S22_ADS.iml" filepath="$PROJECT_DIR$/S22_ADS.iml" />
+    </modules>
+  </component>
+</project>
