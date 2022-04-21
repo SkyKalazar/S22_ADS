@@ -1,4 +1,4 @@
-package Nodes;
+package Node;
 
 public class BinaryTreeNode<E> {
 
@@ -10,7 +10,6 @@ public class BinaryTreeNode<E> {
         element = value;
         leftChild = null;
         rightChild = null;
-        System.out.println("Hello");
     }
 
     public void setElement(E element) {
@@ -26,7 +25,7 @@ public class BinaryTreeNode<E> {
     }
 
     public BinaryTreeNode<E> getLeftChild() {
-        return leftChild == null ? null : leftChild;
+        return leftChild;
     }
 
     public void addRightChild(BinaryTreeNode<E> rightChild) {
@@ -34,6 +33,6 @@ public class BinaryTreeNode<E> {
     }
 
     public BinaryTreeNode<E> getRightChild() {
-        return rightChild == null ? null : rightChild;
+        return rightChild;
     }
 }

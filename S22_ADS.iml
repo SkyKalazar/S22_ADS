@@ -6,6 +6,8 @@
       <sourceFolder url="file://$MODULE_DIR$/BinarySearchTree/Testing" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/BinarySearchTree/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/BalancedBinarySearchTree/Testing" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/BalancedBinarySearchTree/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
