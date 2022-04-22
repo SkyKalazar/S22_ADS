@@ -1,9 +1,13 @@
 import Node.BinaryTreeNode;
 import Tree.BinaryTree;
 import Tree.BinaryTreePrint;
+import Tree.Traversals;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -59,6 +63,8 @@ class BinaryTreeTest {
 
     @AfterEach
     void tearDown() {
+        BinaryTreePrint print = new BinaryTreePrint();
+        print.printTree(root);
     }
 
     @Test
@@ -70,39 +76,59 @@ class BinaryTreeTest {
     void setRoot() {
         tree.getRoot().setElement(27);
         assertEquals(27, tree.getRoot().getElement());
-        BinaryTreePrint print = new BinaryTreePrint();
-        print.printTree(root);
     }
 
+    @Test
+    void isNotEmpty() {
+        assertFalse(tree.isEmpty());
+    }
     @Test
     void isEmpty() {
+        BinaryTree<Double> tree2 = new BinaryTree<>(new BinaryTreeNode<>(200.0));
+        tree2.setRoot(null);
+        assertTrue(tree2.isEmpty());
     }
-
     @Test
     void size() {
+        assertEquals(11, tree.size());
     }
 
     @Test
     void contains() {
+        assertFalse(tree.contains(5));
+        assertTrue(tree.contains(10));
     }
 
     @Test
     void preOrderTraversal() {
+        ArrayList<Integer> preOrder = new ArrayList<>(Arrays.asList(10, 11, 20, 19, 16, 17, 18, 12, 13, 14, 15));
+
+        assertEquals(preOrder, tree.masterTraversal(Traversals.preOrder));
     }
 
     @Test
     void inOrderTraversal() {
+        ArrayList<Integer> inOrder = new ArrayList<>(Arrays.asList(20, 11, 16, 19, 17, 18, 10, 12, 14, 13, 15));
+
+        assertEquals(inOrder, tree.masterTraversal(Traversals.inOrder));
     }
 
     @Test
     void postOrderTraversal() {
+        ArrayList<Integer> postOrder = new ArrayList<>(Arrays.asList(20, 16, 18, 17, 19, 11, 14, 15, 13, 12, 10));
+
+        assertEquals(postOrder, tree.masterTraversal(Traversals.postOrder));
     }
 
     @Test
     void levelOrderTraversal() {
+        ArrayList<Integer> levelOrder = new ArrayList<>(Arrays.asList(10, 11, 12, 20, 19, 13, 16, 17, 14, 15, 18));
+
+        assertEquals(levelOrder, tree.masterTraversal(Traversals.levelOrder));
     }
 
     @Test
     void height() {
+        assertEquals(4, tree.height(root));
     }
 }

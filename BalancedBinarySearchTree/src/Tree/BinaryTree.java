@@ -39,7 +39,8 @@ public class BinaryTree<E> {
                 case preOrder -> finalResult.addAll(preOrder(root));
                 case inOrder -> finalResult.addAll(inOrder(root));
                 case postOrder -> finalResult.addAll(postOrder(root));
-                case levelOrder -> finalResult.addAll(levelOrder());
+                case levelOrder -> finalResult.addAll(levelOrder(root));
+
             }
             intermediateResult.clear();
         }
@@ -70,12 +71,38 @@ public class BinaryTree<E> {
         }
         return intermediateResult;
     }
-    private ArrayList<E> levelOrder() {
-      return null;
+    private ArrayList<E> levelOrder(BinaryTreeNode<E> currentNode) {
+
+        int h = height(currentNode);
+        int i;
+        for(i = 0; i<= h; i++) {
+            printCurrentLevel(currentNode, i);
+        }
+            return intermediateResult;
+
     }
-    public int height() {
-        return 0;
+    private void printCurrentLevel(BinaryTreeNode<E> currentNode, int level) {
+        if(currentNode == null)
+            return;
+        if(level == 0) {
+            intermediateResult.add(currentNode.getElement());
+        }
+        else if (level > 0) {
+            printCurrentLevel(currentNode.getLeftChild(), level-1);
+            printCurrentLevel(currentNode.getRightChild(), level-1);
+        }
     }
 
+    public int height(BinaryTreeNode<E> currentNode) {
+        if(currentNode == null) {
+            return -1;
+        }
+        else {
+            int leftHeight = height(currentNode.getLeftChild());
+            int rightHeight = height(currentNode.getRightChild());
 
-}
+            return leftHeight >= rightHeight ? leftHeight + 1 : rightHeight + 1;
+        }
+        }
+    }
+
