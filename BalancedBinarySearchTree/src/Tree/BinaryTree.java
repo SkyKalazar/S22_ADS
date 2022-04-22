@@ -7,13 +7,11 @@ import java.util.ArrayList;
 public class BinaryTree<E> {
 
     private BinaryTreeNode<E> root;
-    private int size;
     private ArrayList<E> intermediateResult;
 
     public BinaryTree(BinaryTreeNode<E> root) {
         intermediateResult = new ArrayList<>();
         this.root = root;
-        size = 1;
     }
     public BinaryTreeNode<E> getRoot() {
         return root;
