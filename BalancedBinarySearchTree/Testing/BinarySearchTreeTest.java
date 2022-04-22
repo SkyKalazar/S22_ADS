@@ -43,7 +43,16 @@ class BinarySearchTreeTest {
     }
 
     @Test
-    void removeElement() {
+    void removeElement1() {
+        tree.removeElement(7);
+        BinaryTreePrint print = new BinaryTreePrint();
+        print.printTree(tree.getRoot());
+    }
+    @Test
+    void removeElement2() {
+        tree.removeElement(11);
+        BinaryTreePrint print = new BinaryTreePrint();
+        print.printTree(tree.getRoot());
     }
 
     @Test
