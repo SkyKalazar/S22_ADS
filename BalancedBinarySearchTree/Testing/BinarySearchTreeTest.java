@@ -15,9 +15,11 @@ class BinarySearchTreeTest {
 
     private BinarySearchTreeNode<Integer> node1;
     private BinarySearchTree<Integer> tree;
+    private BinaryTreePrint print;
 
     @BeforeEach
     void setUp() {
+        print = new BinaryTreePrint();
         node1 = new BinarySearchTreeNode<>(10);
 
         tree = new BinarySearchTree<>(node1);
@@ -34,7 +36,6 @@ class BinarySearchTreeTest {
 
     @Test
     void insertElement() {
-        BinaryTreePrint print = new BinaryTreePrint();
         print.printTree(tree.getRoot());
 
         ArrayList<Integer> levelOrder = new ArrayList<>(Arrays.asList(10, 7, 15, 11, 20));
@@ -45,13 +46,12 @@ class BinarySearchTreeTest {
     @Test
     void removeElement1() {
         tree.removeElement(7);
-        BinaryTreePrint print = new BinaryTreePrint();
         print.printTree(tree.getRoot());
     }
     @Test
     void removeElement2() {
-        tree.removeElement(11);
-        BinaryTreePrint print = new BinaryTreePrint();
+        print.printTree(tree.getRoot());
+        tree.removeElement(10);
         print.printTree(tree.getRoot());
     }
 
@@ -67,5 +67,20 @@ class BinarySearchTreeTest {
 
     @Test
     void rebalance() {
+        tree.insertElement(1);
+        tree.insertElement(2);
+        tree.insertElement(3);
+        tree.insertElement(4);
+        tree.insertElement(5);
+        tree.insertElement(6);
+
+        print.printTree(tree.getRoot());
+
+        tree.rebalance();
+
+        print.printTree(tree.getRoot());
+
+
+
     }
 }
