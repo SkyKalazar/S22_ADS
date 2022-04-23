@@ -48,6 +48,12 @@ class BinarySearchTreeTest {
         tree.removeElement(7);
         print.printTree(tree.getRoot());
     }
+    @Test
+    void removeElement2() {
+        print.printTree(tree.getRoot());
+        tree.removeElement(10);
+        print.printTree(tree.getRoot());
+    }
 
     @Test
     void findMin() {

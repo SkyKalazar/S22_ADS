@@ -46,6 +46,11 @@ public class BinarySearchTree<E> extends BinaryTree<E> {
     }
 
     private void removeRecursively(BinarySearchTreeNode<E> currentNode, E targetValue) {
+        if (getRoot().getElement().equals(targetValue)) {
+            removeRootAndRebalance();
+            return;
+        }
+
         //The left child is the sought after node
         if(currentNode.getLeftChild().getElement().equals(targetValue)) {
             if(currentNode.getLeftChild().getLeftChild() == null && currentNode.getLeftChild().getRightChild() == null) {
@@ -90,27 +95,18 @@ public class BinarySearchTree<E> extends BinaryTree<E> {
     public E findMax() {
         return masterTraversal(Traversals.inOrder).get(size()-1);
     }
+    private void removeRootAndRebalance() {
+        ArrayList<E> inOrder = masterTraversal(Traversals.inOrder);
+        inOrder.remove(getRoot().getElement());
+        E newRoot = inOrder.get(inOrder.size()/2);
+        setRoot(new BinarySearchTreeNode<>(newRoot));
+        insertMiddleElement(inOrder);
+    }
+
     public void rebalance() {
         ArrayList<E> inOrder = masterTraversal(Traversals.inOrder);
         E newRoot = inOrder.get(inOrder.size()/2);
         setRoot(new BinarySearchTreeNode<>(newRoot));
-
-        System.out.println(inOrder);
-
-
-//        ArrayList<E> leftBranch = new ArrayList<>();
-//        while(!inOrder.get(0).equals(newRoot)) {
-//            leftBranch.add(inOrder.get(0));
-//            inOrder.remove(0);
-//        }
-////
-////
-//        ArrayList<E> rightBranch = new ArrayList<>();
-//        while(!inOrder.isEmpty()) {
-//            rightBranch.add(inOrder.get(0));
-//            inOrder.remove(0);
-//        }
-//
         insertMiddleElement(inOrder);
     }
     private void insertMiddleElement(ArrayList<E> nodes) {
