@@ -1,9 +1,7 @@
 package Tree;
 
 import Node.BinarySearchTreeNode;
-import Node.BinaryTreeNode;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class BinarySearchTree<E> extends BinaryTree<E> {
@@ -94,14 +92,40 @@ public class BinarySearchTree<E> extends BinaryTree<E> {
     }
     public void rebalance() {
         ArrayList<E> inOrder = masterTraversal(Traversals.inOrder);
-
         E newRoot = inOrder.get(inOrder.size()/2);
         setRoot(new BinarySearchTreeNode<>(newRoot));
-        inOrder.remove(newRoot);
 
-        for (E e : inOrder) {
-            insertElement(e);
-        }
+        System.out.println(inOrder);
+
+
+//        ArrayList<E> leftBranch = new ArrayList<>();
+//        while(!inOrder.get(0).equals(newRoot)) {
+//            leftBranch.add(inOrder.get(0));
+//            inOrder.remove(0);
+//        }
+////
+////
+//        ArrayList<E> rightBranch = new ArrayList<>();
+//        while(!inOrder.isEmpty()) {
+//            rightBranch.add(inOrder.get(0));
+//            inOrder.remove(0);
+//        }
+//
+        insertMiddleElement(inOrder);
+    }
+    private void insertMiddleElement(ArrayList<E> nodes) {
+            if(!getRoot().getElement().equals(nodes.get(nodes.size()/2))) {
+                insertElement(nodes.get(nodes.size() / 2));
+            }
+            ArrayList<E> leftBranch = new ArrayList<>(nodes.subList(0, nodes.size() / 2));
+            ArrayList<E> rightBranch = new ArrayList<>(nodes.subList((nodes.size()/2)+1, nodes.size()));
+
+            nodes.remove(nodes.get(nodes.size()/2));
+
+            if(!leftBranch.isEmpty())
+            insertMiddleElement(leftBranch);
+            if(!rightBranch.isEmpty())
+            insertMiddleElement(rightBranch);
 
     }
 }

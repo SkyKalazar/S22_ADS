@@ -48,12 +48,6 @@ class BinarySearchTreeTest {
         tree.removeElement(7);
         print.printTree(tree.getRoot());
     }
-    @Test
-    void removeElement2() {
-        print.printTree(tree.getRoot());
-        tree.removeElement(10);
-        print.printTree(tree.getRoot());
-    }
 
     @Test
     void findMin() {
@@ -68,14 +62,16 @@ class BinarySearchTreeTest {
     @Test
     void rebalance() {
         tree.insertElement(1);
+        tree.insertElement(25);
         tree.insertElement(2);
         tree.insertElement(3);
         tree.insertElement(4);
-        tree.insertElement(5);
-        tree.insertElement(6);
+        tree.insertElement(50);
+        tree.insertElement(-2);
+        tree.insertElement(100);
 
         print.printTree(tree.getRoot());
-
+//
         tree.rebalance();
 
         print.printTree(tree.getRoot());
