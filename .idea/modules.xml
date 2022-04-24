@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/Fibonacci/Fibonacci.iml" filepath="$PROJECT_DIR$/Fibonacci/Fibonacci.iml" />
       <module fileurl="file://$PROJECT_DIR$/MessyBoogeymanTree/MessyBoogeymanTree.iml" filepath="$PROJECT_DIR$/MessyBoogeymanTree/MessyBoogeymanTree.iml" />
       <module fileurl="file://$PROJECT_DIR$/PostfixCalculator/PostfixCalculator.iml" filepath="$PROJECT_DIR$/PostfixCalculator/PostfixCalculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RodSplitter/RodSplitter.iml" filepath="$PROJECT_DIR$/RodSplitter/RodSplitter.iml" />
       <module fileurl="file://$PROJECT_DIR$/S22_ADS.iml" filepath="$PROJECT_DIR$/S22_ADS.iml" />
     </modules>
   </component>
