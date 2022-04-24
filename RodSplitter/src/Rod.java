@@ -40,15 +40,13 @@ public class Rod {
         return finalMax;
     }
 
-    public int calculateMaximumWorth(int localRodLength) {
+    public int calculateMaximumWorth(int partialRodLength) {
 
         int localMax = 0;
 
-        //let's say the call is 15
-
-        for(int i = 0; i < localRodLength; i++) {
-            if(segmentValues.get(i) + segmentValues.get(localRodLength-i) > localMax) {
-                localMax = segmentValues.get(i) + segmentValues.get(localRodLength-i);
+        for(int i = 0; i < partialRodLength; i++) {
+            if(segmentValues.get(i) + segmentValues.get(partialRodLength-i) > localMax) {
+                localMax = segmentValues.get(i) + segmentValues.get(partialRodLength-i);
             }
         }
 
