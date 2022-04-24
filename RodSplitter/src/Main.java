@@ -4,6 +4,6 @@ public class Main {
 
         Rod guineaPig = new Rod();
 
-        System.out.println(guineaPig.calculateMaximumWorth(15));
+        System.out.println(guineaPig.rodRequestReceiver(11));
     }
 }
