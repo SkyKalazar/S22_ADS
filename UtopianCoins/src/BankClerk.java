@@ -14,14 +14,20 @@ public class BankClerk {
 
     // Returns the smallest number of coins to which the capital can be exchanged to
     public int numberOfCoinsAsChange(int capital) {
-        // Let us try with 15
         int optimal = capital-1;
 
-        for(int i = 0; i < denominations.size(); i++) {
-            if(denominations.get(i) <= capital) {
-               int count = numberOfCoinsAsChange(capital - denominations.get(i));
-            if(count < optimal)
-                optimal = count;
+        if(bestExchange.get(capital) != null) {
+            optimal = bestExchange.get(capital);
+        }
+        else {
+            for (int i = 0; i < denominations.size(); i++) {
+                if (denominations.get(i) <= capital) {
+                    int count = numberOfCoinsAsChange(capital - denominations.get(i));
+                    if (count < optimal) {
+                        optimal = count;
+                        bestExchange.put(capital, optimal);
+                    }
+                }
             }
         }
 
