@@ -4,5 +4,7 @@ public class Main {
 
         BankClerk bob = new BankClerk();
 
+        System.out.println(bob.numberOfCoinsAsChange(70));
+
     }
 }
